@@ -4,17 +4,10 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-#Actix web framework and run-time
-actix-web = "^3.3"
-actix-rt = "1.1.1"
-#Environment variable access libraries
+actix-web = "4.2.1"
+actix-rt = "2.7.0"
 dotenv = "0.15.0"
-#Postgres access library
-sqlx = {version = "0.3.5", default_features = false, features = ["postgres","runtime-tokio", 
-"macros","chrono"]}
-# Data serialization library
+sqlx = {version = "0.6.2", default_features = false, features = ["postgres","runtime-tokio-native-tls", "macros","chrono"]}
 serde = { version = "1.0.110", features = ["derive"] }
-# Other utils
 chrono = {version = "0.4.11", features = ["serde"]}
-# Openssl for build (if openssl is not already installed on the dev server)
-openssl = { version = "0.10", features = ["vendored"] }
+openssl = { version = "0.10.41", features = ["vendored"] }
