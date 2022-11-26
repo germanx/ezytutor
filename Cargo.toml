@@ -1,2 +1,2 @@
 [workspace]
-members = ["tutor-nodb", "tutor-db"]
+members = ["tutor-web-service", "tutor-web-app-ssr"]
