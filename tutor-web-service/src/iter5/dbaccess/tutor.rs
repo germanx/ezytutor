@@ -44,6 +44,8 @@ where tutor_id = $1",
 } 
 
 pub async fn post_new_tutor_db(pool: &PgPool, new_tutor: NewTutor) -> Result<Tutor, EzyTutorError> {
+    println!(">>> post_new_tutor_db");
+
     let tutor_row = sqlx::query!("insert into ezy_tutor_c6 (tutor_name, tutor_pic_url, tutor_profile) values ($1,$2,$3) returning tutor_id, tutor_name, tutor_pic_url, tutor_profile", 
         new_tutor.tutor_name, new_tutor.tutor_pic_url, new_tutor.tutor_profile)
     .fetch_one(pool)

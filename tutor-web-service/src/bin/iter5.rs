@@ -39,8 +39,7 @@ async fn main() -> io::Result<()> {
     App::new()
       .app_data(shared_data.clone())
       .app_data(web::JsonConfig::default().error_handler(|_err, _req| {
-        EzyTutorError::InvalidInput(
-          "Please provide valid JSON input".to_string()).into()
+        EzyTutorError::InvalidInput("Please provide valid Json input".to_string()).into()
       }))
       .configure(general_routes)
       .configure(course_routes)
